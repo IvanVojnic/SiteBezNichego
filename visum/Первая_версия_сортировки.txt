@@ -1,0 +1,104 @@
+/*for (let i = 0; i < mainBlock.children.length; i++) {
+    console.log(platforms[i]);
+}*/
+
+/*function eventFormMonBegin(value) {
+    for (let i = 0; i < platforms.length; i++) {
+        for (let j = i; j < platforms.length; j++) {
+            if (+platforms[i].getAttribute('data-mon-price') > +platforms[j].getAttribute('data-mon-price')) {
+                let tmp = platforms[j];
+                platforms[j] = platforms[i];
+                platforms[i] = tmp;
+            }
+        }
+    }
+    //let valBegin = document.querySelector("getBeginPriceForMonth").value;
+    let valEnd = document.querySelector("getEndPriceForMonth").value;
+    for (let i = 0; i < platforms.length; i++) {
+        if (+platforms[i].getAttribute('data-mon-price') < +value || +platforms[i].getAttribute('data-mon-price') > +valEnd) {
+            platforms[i].style.display = "none";
+        } else {
+            //  platforms.unshift(tmpPlatforms.pop())
+            platforms[i].style.display = "inline-block";
+        }
+    }
+    /*for (let i = 0; i < platforms.length; i++) {
+        if (+platforms[i].getAttribute('data-mon-price') < +value) {
+            platforms[i].style.display = "none";
+            tmpPlatforms.push(platforms.shift());
+             console.log("tmpPlatforms");
+             console.log(tmpPlatforms);
+             console.log("platforms");
+             console.log(platforms);
+
+        } else {
+            //  platforms.unshift(tmpPlatforms.pop())
+            platforms[i].style.display = "inline-block";
+        }
+    }
+}*/
+
+/*function eventFormMonEnd(value) {
+    for (let i = 0; i < platforms.length; i++) {
+        for (let j = i; j < platforms.length; j++) {
+            if (+platforms[i].getAttribute('data-mon-price') < +platforms[j].getAttribute('data-mon-price')) {
+                let tmp = platforms[j];
+                platforms[j] = platforms[i];
+                platforms[i] = tmp;
+            }
+        }
+    }
+    for (let i = 0; i < platforms.length; i++) {
+        if (+platforms[i].getAttribute('data-mon-price') > +value) {
+            platforms[i].style.display = "none";
+        }
+        /*else {
+                   platforms.unshift(tmpPlatforms.pop())
+                   console.log("platforms");
+                   console.log(platforms);
+                   console.log("tmpPlatforms");
+                   console.log(tmpPlatforms);
+                   platforms[i].style.display = "inline-block";
+               }
+    }
+}*/
+
+
+
+/*function eventFormThreeMonBegin(value) {
+    for (let i = 0; i < platforms.length; i++) {
+        for (let j = i; j < platforms.length; j++) {
+            if (+platforms[i].getAttribute('data-three-mon-price') > +platforms[j].getAttribute('data-three-mon-price')) {
+                let tmp = platforms[j];
+                platforms[j] = platforms[i];
+                platforms[i] = tmp;
+            }
+        }
+    }
+    for (let i = 0; i < platforms.length; i++) {
+        if (+platforms[i].getAttribute('data-three-mon-price') < +value) {
+            platforms[i].style.display = "none";
+        } else {
+            platforms[i].style.display = "inline-block";
+        }
+    }
+}
+
+function eventFormThreeMonEnd(value) {
+    for (let i = 0; i < platforms.length; i++) {
+        for (let j = i; j < platforms.length; j++) {
+            if (+platforms[i].getAttribute('data-three-mon-price') < +platforms[j].getAttribute('data-three-mon-price')) {
+                let tmp = platforms[j];
+                platforms[j] = platforms[i];
+                platforms[i] = tmp;
+            }
+        }
+    }
+    for (let i = 0; i < platforms.length; i++) {
+        if (+platforms[i].getAttribute('data-three-mon-price') > +value) {
+            platforms[i].style.display = "none";
+        } else {
+            platforms[i].style.display = "inline-block";
+        }
+    }
+}

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cinema Visum</title>
+
+    <link rel="stylesheet" href="style/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="style/top_films.css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="row no-gutters menu">
+                <div class="col-ld-1">
+                    <a href="" class="visum"><span>Visum</span></a>
+                </div>
+                <div class="col-lg-5 col-md-7 col-sm-9 col-9 head_name">
+                    <div><a href="" class="lit_V">V</a> </div>
+                    <h1 class="top1">Рейтинг платформ по количеству фильмов</h1>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-3 col-3">
+                    <nav class="d-flex justify-content-around head">
+                        <div class="list1">
+                            <ul>
+                                <li><a href="" class="bottom">Главная</a></li>
+                                <li id="dropdown"><span class="bottom" id="reiting">Готовые рейтинги</span>
+                                    <div class="dropdown-content">
+                                        <a href="">Топ по количеству сериалов</a>
+                                        <a href="">Топ по рейтингу фильмов</a>
+                                    </div>
+                                </li>
+                                <li><a href="" class="bottom" id="criteria">Подобрать по критериям</a></li>
+                                <li><a href="" class="bottom" id="findfilm">Поиск по фильму</a></li>
+                            </ul>
+                        </div>
+                        <div class="site_navigate_drop">
+                            <div class="drop-label">Меню</div>
+                            <div class="list2">
+                                <ul class="submenu">
+                                    <li><a href="" class="bottom">Главная</a></li>
+
+                                    <li><a href="" class="bottom" id="criteria">Подобрать по критериям</a></li>
+                                    <li><a href="" class="bottom" id="findfilm">Поиск по фильму</a></li>
+                                    <li id="dropdown"><span href="" class="bottom" id="reiting">Готовые рейтинги</span>
+                                        <div class="dropdown-content">
+                                            <a href="">Топ по количеству сериалов</a>
+                                            <a href="">Топ по рейтингу фильмов</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="container">
+            <div class="col-md-2 col-sm-2 sort_block">
+                <aside class="sidebar">
+                    <div class="sort_by_prise">
+                        <div class="sort_name">
+                            Сортировать по цене за подписку
+                        </div>
+                        <ul class="sort">
+                            <li>
+                                <span class="type_of_period">-за месяц</span>
+                                <form action="" class="input_prise_of_period pole">
+                                    <input type="number" class="from" name="month_prise" min="0" max="100" placeholder="от">
+                                    <input type="number" class="to" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за 3 месяцa</span>
+                                <form action="" class="input_prise_of_period pole">
+                                    <input type="number" class="from" name="month_prise" min="0" max="100" placeholder="от">
+                                    <input type="number" class="to" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за пол года</span>
+                                <form action="" class="input_prise_of_period  pole">
+                                    <input type="number" class="from" name="6month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to" name="6month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за год</span>
+                                <form action="" class="input_prise_of_period pole">
+                                    <input type="number" class="from" name="year" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to" name="year_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">пробный период</span>
+                                <form action="" class="input_counts_of_free_days pole">
+                                    <input type="number" class="film_count" name="6month_prise" min="0" max="40" placeholder="кол-во дней">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_by_count">
+                        <div class="sort_name" id="sort_films">
+                            Сортировать по количеству фильмов
+                        </div>
+                        <form action="" class="input_count_of_films">
+                            <p><input type="radio" id="incr" name="count_of_films" value="increase">
+                                <label for="incr">По возрастанию</label></p>
+                            <p><input type="radio" id="decr" name="count_of_films" value="decrease">
+                                <label for="decr">По убыванию</label></p>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+
+
+            <div class=" col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10  platforms_block">
+                <div class="row_with_button d-flex">
+                    <form>
+                        <input type="search" name="find_platfom_by_name" placeholder="Название платформы">
+                    </form>
+                    <span class="button_filtre" onclick="openNav()">Фильтры</span>
+                </div>
+                <div class="row no-gutters sidebar_type2" id="sidebar_type2">
+                    <div class="row no-gutters d-flex prise_sort_type2">
+                        <div class="sort_name_type2">
+                            Сортировать по цене за подписку
+                        </div>
+                        <ul class="sort_type2">
+                            <li>
+                                <span class="type_of_period_type2">-за месяц</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li style="margin-left: 8%;">
+                                <span class="type_of_period_type2">-за 3 месяцa</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period_type2">-за пол года</span>
+                                <form action="" class="input_prise_of_period_type2  pole_type2">
+                                    <input type="number" class="from_type2" name="6month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="6month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li style="margin-left: 8%;">
+                                <span class="type_of_period_type2">-за год</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="year" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="year_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li id="free_day">
+                                <span class="type_of_period_type2 pole_input_of_free_days">пробный период</span>
+                                <form action="" class="input_counts_of_free_days_type2 pole_type2">
+                                    <input type="number" class="from_type2 film_count_type2" name="6month_prise" min="0" max="40" placeholder="кол-во дней">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="sort_by_count_type2">
+                        <div class="sort_name_type2">
+                            Сортировать по количеству фильмов
+                        </div>
+                        <form action="" class="input_count_of_films_type2">
+                            <p><input type="radio" id="incr_type2" name="count_of_films" value="increase">
+                                <label for="incr">По возрастанию</label></p>
+                            <p><input type="radio" id="decr_type2" name="count_of_films" value="decrease">
+                                <label for="decr">По убыванию</label></p>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="row no-gutters d-flex justify-content-around">
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/am.jpg" alt="amediatv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice1()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_1">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>20.49</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 85.50 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 171.00 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                            <img src="images/cross.png" alt="cross" class="cross_priselist" onclick="">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/netfl.png" alt="netflix" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice2()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_2">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>25.12</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td>150.72</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 301.43 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>30 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/meg.jpg" alt="megotv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice3()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_3">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>5.90</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 35.40 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 70.80 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>14 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5  one_platform four_plat_view">
+                        <a href="" class="headband">
+                            <img src="images/strart1.png" alt="starttv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice4()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_4">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>5.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 31.74 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 63.48 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters  d-flex justify-content-around not_near_sidebar">
+                    <div class="col-md-3 col-sm-5 col-5 one_platform four_plat_not_view">
+                        <a href="" class="headband">
+                            <img src="images/strart1.png" alt="starttv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice5()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_5">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>5.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 31.74 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 63.48 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/hbo.jpg" alt="hbo" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice6()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_6">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>38.92</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 233.52 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 467.04 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>0 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/more.jpg" alt="moretv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice7()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_7">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>12.59</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 24.05 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 45.70 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row no-gutters  d-flex justify-content-around not_near_sidebar">
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/ivi1.jpg" alt="ivitv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice8()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_8">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>6.89</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 30.99 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td>51.99</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>14 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/apple1.jpg" alt="appletv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice9()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_9">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>6.81</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 40.86 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 81.72 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/okko1.jpg" alt="okkotv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice10()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_10">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>6.81</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 40.86 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 112.61 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>14 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform four_plat_view">
+                        <a href="" class="headband">
+                            <img src="images/tvzavr1.png" alt="tvzavrtv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice11()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_11">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>8.52</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 51.12 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 102.24 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>14 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters  d-flex justify-content-around not_near_sidebar">
+                    <div class="col-md-3 col-sm-5 col-5 one_platform four_plat_not_view">
+                        <a href="" class="headband">
+                            <img src="images/tvzavr1.png" alt="tvzavrtv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice12()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_12">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>8.52</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 51.12 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 102.24 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>14 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/premiertv.png" alt="tnttv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice13()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_13">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>6.81</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 40.86 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 81.72 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>1 месяц</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/jandex1.png" alt="jandextv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice14()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_14">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>5.49</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 32.94 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td> 65.88 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>1 месяц</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters  d-flex justify-content-around not_near_sidebar">
+                    <div class="col-md-3 col-sm-5 col-5 col-5 one_platform ">
+                        <a href="" class="headband">
+                            <img src="images/amzon.png" alt="amazontv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice15()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_15">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>18.82</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 112.92 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td>225.84</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-5 one_platform">
+                        <a href="" class="headband">
+                            <img src="images/voka.jpg" alt="vokatv" class="logotip">
+                        </a>
+                        <div class="main_inf_of_platform">
+                            <h3>3000 фильмов</h3>
+                            <img src="images/three_dots.svg" alt="dots" class="dots" width="30px" height="30px" onclick="openPrice16()">
+                        </div>
+                        <div class="dropdown-prise" id="platform_16">
+                            <table class="priselist">
+                                <tr>
+                                    <th colspan="2">Цена</th>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За месяц: </td>
+                                    <td>18.82</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За 3 месяцa: </td>
+                                    <td>15.29</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За пол года: </td>
+                                    <td> 112.92 </td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">За год: </td>
+                                    <td>225.84</td>
+                                </tr>
+                                <tr class="under_head_of_table">
+                                    <td class="period">Пробные дни:</td>
+                                    <td>7 дней</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 four_plat_not_view"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="container conect_with_us">
+            <div class="content">
+                <div class="row no-gutters">
+                    <div class="col-md-6 col-12">
+                        <div class="contact">Свяжитесь с нами</div>
+                        <p class="adress">проспект Независимости 164/42 / Минск, Беларусь</p>
+                        <p>Тел.: <span>(+375) 29 373-03-83</span></p>
+                        <p>E-mail: <span>ivojnic44@gmail.com</span></p>
+                        <ul>
+                            <li class="facebook">
+                                <a href=""><img src="images/ico-15.png" alt=""></a>
+                            </li>
+                            <li class="twitter">
+                                <a href=""><img src="images/ico-16.png" alt=""></a>
+                            </li>
+                            <li class="google">
+                                <a href=""><img src="images/ico-18.png" alt=""></a>
+                            </li>
+                            <li class="email">
+                                <a href=""><img src="images/ico-19.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <form action="" method="post" class="data_user">
+                            <input type="text" name="name" placeholder="Ваше имя">
+                            <input type="email" name="email" placeholder="Ваш email адрес">
+                            <textarea>Ваши предложения</textarea>
+                            <button>Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer id="bot">
+            <p class="fut">Directed by</p>
+            <p class="fut"><a href="" class="futt">Ivan Voinich</a> <a href="" class="futt">Nikita Seargey</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function openPrice1() {
+            document.getElementById("platform_1").style.display = "flex";
+        }
+
+        function openPrice2() {
+            document.getElementById("platform_2").style.display = "flex";
+        }
+
+        function openPrice3() {
+            document.getElementById("platform_3").style.display = "flex";
+        }
+
+        function openPrice4() {
+            document.getElementById("platform_4").style.display = "flex";
+        }
+
+        function openPrice5() {
+            document.getElementById("platform_5").style.display = "flex";
+        }
+
+        function openPrice6() {
+            document.getElementById("platform_6").style.display = "flex";
+        }
+
+        function openPrice7() {
+            document.getElementById("platform_7").style.display = "flex";
+        }
+
+        function openPrice8() {
+            document.getElementById("platform_8").style.display = "flex";
+        }
+
+        function openPrice9() {
+            document.getElementById("platform_9").style.display = "flex";
+        }
+
+        function openPrice10() {
+            document.getElementById("platform_10").style.display = "flex";
+        }
+
+        function openPrice11() {
+            document.getElementById("platform_11").style.display = "flex";
+        }
+
+        function openPrice12() {
+            document.getElementById("platform_12").style.display = "flex";
+        }
+
+        function openPrice13() {
+            document.getElementById("platform_13").style.display = "flex";
+        }
+
+        function openPrice14() {
+            document.getElementById("platform_14").style.display = "flex";
+        }
+
+        function openPrice15() {
+            document.getElementById("platform_15").style.display = "flex";
+        }
+
+        function openPrice16() {
+            document.getElementById("platform_16").style.display = "flex";
+        }
+
+
+
+        function openNav() {
+            document.getElementById("sidebar_type2").style.display = "flex";
+        }
+    </script>
+
+</body>
+
+</html>

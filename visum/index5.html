@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta cherset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cinema Visum
+    </title>
+    <link rel="stylesheet" href="style/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="style/ind5.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="scripts/jquerry.js">
+    </script>
+</head>
+
+<body class="container-fluid">
+    <header>
+
+        <nav class="menu">
+            <ul id="navigation" class="row">
+                <li class="col-sm"><a href="index1.html" class="bottom" id="visum">Visum</a></li>
+
+                <li id="dropdown" class="col-sm"><a href="" class="bottom" id="reiting">Готовые рейтинги</a>
+                    <div class="dropdown-content">
+                        <a href="index4.html">Топ по количеству сериалов</a>
+                        <a href="index3.html">Топ по количеству фильмов</a>
+                        <a href="">Топ по пробному периоду</a>
+                        <a href="">Топ по мнению пользователя</a>
+                        <a href="">Топ по рейтингу фильмов</a>
+                    </div>
+                </li>
+                <li class="col-sm"><a href="" class="bottom" id="criteria">Подобрать по критериям</a></li>
+                <li class="col-sm"><a href="" class="bottom" id="findfilm">Поиск по фильму</a></li>
+            </ul>
+        </nav>
+
+        <section class="topfilms">
+            <div id="background"></div>
+            <h1 class="top1" style="font-size:3vw">Рейтинг платформ по количеству фильмов</h1>
+        </section>
+    </header>
+
+    <aside class="sidebar">
+        <div class="sort_by_prise">
+            <div class="sort_name">
+                Цена
+            </div>
+            <ul class="sort">
+                <li>
+                    <span class="type_of_period">-за месяц</span>
+                    <form action="" class="input_prise_of_period" class="start_prise">
+                        <input type="number" class="from" name="month_prise" min="0" max="100" placeholder="от">
+                    </form>
+                    <form action="">
+                        <input type="number" class="to" name="month_prise" min="0" max="100" placeholder="до">
+                    </form>
+                </li>
+                <li>
+                    <span class="type_of_period">-за пол года</span>
+                    <form action="" class="input_prise_of_period" class="start_prise">
+                        <input type="number" class="from" name="6month_prise" min="0" max="100" placeholder="от">
+                    </form>
+                    <form action="">
+                        <input type="number" class="to" name="6month_prise" min="0" max="100" placeholder="до">
+                    </form>
+                </li>
+                <li>
+                    <span class="type_of_period">-за год</span>
+                    <form action="" class="input_prise_of_period" class="start_prise">
+                        <input type="number" class="from" name="year" min="0" max="100" placeholder="от">
+                    </form>
+                    <form action="">
+                        <input type="number" class="to" name="year_prise" min="0" max="100" placeholder="до">
+                    </form>
+                </li>
+                <li>
+                    <span class="type_of_period">пробный период</span>
+                    <form action="" class="input_counts_of_free_days" class="start_prise">
+                        <input type="number" class="from" name="6month_prise" min="0" max="40" placeholder="кол-во дней">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="sort_name" id="sort_films">
+            Количество фильмов
+        </div>
+        <ul class="sort" class="sort_by_counts">
+            <li class="start_counts">
+                <form action="" class="input_count_of_films" class="start_counts">
+                    <input type="number" class="from" name="count_of_films" min="4000" max="60000" placeholder="от">
+                </form>
+                <form action="" class="input_count_of_films">
+                    <input type="number" class="to" name="count_of_films" min="4000" max="60000" placeholder="до">
+                </form>
+            </li>
+        </ul>
+        <div class="sort_name" id="sort_films">
+            Количество сериалов
+        </div>
+        <ul class="sort" class="sort_by_counts">
+            <li class="start_counts">
+                <form action="" class="input_count_of_films" class="start_counts">
+                    <input type="number" class="from" name="count_of_films" min="4000" max="60000" placeholder="от">
+                </form>
+                <form action="" class="input_count_of_films">
+                    <input type="number" class="to" name="count_of_films" min="4000" max="60000" placeholder="до">
+                </form>
+            </li>
+        </ul>
+        <div class="sort_name" id="sort_films">
+            Количество фильмов с высоким рейтингом
+        </div>
+
+
+        <input list="sort_by_film_reiting" name="sort_by_film_reiting" id="choose_reit">
+        <datalist id="sort_by_film_reiting">
+                        <option value=">1">
+                        <option value=">2">
+                        <option value=">3">
+                        <option value=">4">
+                        <option value=">5">
+                        <option value=">6">
+                        <option value=">7">
+                        <option value=">8">
+                        <option value=">9">  
+                    </datalist>
+        </form>
+
+
+    </aside>
+
+    <article class="main">
+        <div class="platform" id="Amediateka">
+            <div class="reit">1</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/am.jpg" alt="amediatv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count" style="font-size:2vw">5000 фильмов, из них российских 1800</span>
+                </div>
+                <table class="priselist">
+                    <tr>
+                        <th colspan="2">Цена</th>
+                    </tr>
+                    <tr class="under_head_of_table">
+                        <td class="period"> - За месяц: </td>
+                        <td>20.49</td>
+                    </tr>
+                    <tr class="under_head_of_table">
+                        <td class="period">- За пол года: </td>
+                        <td> 85.50 </td>
+                    </tr>
+                    <tr class="under_head_of_table">
+                        <td class="period"> - За год: </td>
+                        <td> 171.00 </td>
+                    </tr>
+                    <tr class="under_head_of_table">
+                        <td class="period">- Пробный период</td>
+                        <td>7 дней</td>
+                    </tr>
+                </table> -->
+            </div>
+        </div>
+        </div>
+        <div class="platform" id="Netflix">
+            <div class="reit">2</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/netfl.png" alt="netflix" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 3449 фильмов, из них российских 300 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>25.12</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td>150.72</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 301.43 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>30 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Megogo">
+            <div class="reit">3</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/meg.jpg" alt="megotv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 4500+ фильмов, из них российских 2000 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>5.90</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 35.40 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 70.80 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>14 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="START">
+            <div class="reit">4</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/strart1.png" alt="starttv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 3500 фильмов, из них российских 6000 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>5.29</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 31.74 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 63.48 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>7 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="hbo">
+            <div class="reit">5</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/hbo.jpg" alt="hbo" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>38.92</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 233.52 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 467.04 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>0 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Moretv">
+            <div class="reit">6</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/more.jpg" alt="moretv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>12.59</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 24.05 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 45.70 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>7 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="ivi">
+            <div class="reit">7</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/ivi1.jpg" alt="ivitv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 30000+ фильмов, из них российских 5000 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>6.89</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 30.99 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td>51.99</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>14 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Appletv">
+            <div class="reit">8</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/apple1.jpg" alt="appletv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 20000 фильмов, из них российских 4000 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>6.81</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 40.86 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 81.72 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>7 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Okko">
+            <div class="reit">9</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/okko1.jpg" alt="okkotv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 30000 фильмов, из них российских 7000 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>6.81</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 40.86 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 112.61 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>14 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Tvsavr">
+            <div class="reit">10</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/tvzavr1.png" alt="tvzavrtv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>8.52</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 51.12 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 102.24 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>14 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Premier">
+            <div class="reit">11</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/premiertv.png" alt="tnttv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>6.81</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 40.86 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 81.72 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>1 месяц</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Kinosearch">
+            <div class="reit">12</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/jandex1.png" alt="jandextv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>5.49</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 32.94 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td> 65.88 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>1 месяц</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="platform" id="Amazon">
+            <div class="reit">13</div>
+            <div class="platform_photo">
+                <a href="" class="headband">
+                    <img src="images/amzon.png" alt="amazontv" class="logotip">
+                </a>
+            </div>
+            <div class="main_block">
+                <div class="count">
+                    <span class="decr_count"> 6000 фильмов, из них российских 1800 </span>
+                </div>
+                <div class="prise">
+                    <table class="priselist">
+                        <tr>
+                            <th colspan="2">Цена</th>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За месяц: </td>
+                            <td>18.82</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- За пол года: </td>
+                            <td> 112.92 </td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period"> - За год: </td>
+                            <td>225.84</td>
+                        </tr>
+                        <tr class="under_head_of_table">
+                            <td class="period">- Пробный период</td>
+                            <td>7 дней</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer id="bot">
+        <p class="fut">Directed by</p>
+        <p class="fut"><a href="" class="futt">Ivan Voinich</a> <a href="" class="futt">Nikita Seargey</a></p>
+    </footer>
+</body>
+
+</html>

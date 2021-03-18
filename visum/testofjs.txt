@@ -1,0 +1,102 @@
+объявление переменной: var name
+
+alert - появляется уведомлени
+
+document.write выводит текст
+
+prompt - появляется уведомление в котором нужно ввести данные
+
+console.log() - вывод сообщения в консоль
+
+parseInt() - приводит значене  переменной к типу integer
+пример: var x = parseInt(x);
+
+Math.random() - рандомное число от 0 до 1
+
+Math.floor(число/переменная) - округляет дробное до целого
+
+размер массива - название.length
+
+объекты: 
+var MyObjectStudent = {
+    name: "Ivan",
+    age: 18,
+    curs: 1,
+    programer: true
+};
+
+можно добавить свойство (поле) в объект:
+MyObjectStudent.knowledge = "very well";
+
+можно удалить свойство (поле) из объекта:
+delete MyObjectStudent.curs;
+
+методы в объектах:
+var lazyPupil{
+    name: "Bob",
+    age: 14,
+    sleep: function(){
+        console.log('go to sleep');
+    },
+    mark_of_biology = 8,
+    changeMark: function{
+        this.mark_of_biology = 10; //НУЖНО УКАЗАТЬ THIS
+    }
+};
+
+обращать к свойствам объекта можно и не только через this. , но и
+через [], пример: lazyPupil['name']
+
+
+
+ВЗАИМОДЕЙТСВИЕ JAVASCRIPT C HTML:
+прописываем тег в штмле, указываем его айди: <div id="myDiv">Salam</div>
+
+в js обращаемся к этому элементу по айди:
+создаем переменную. document - глобальный объект, у него есть много методов.
+один из них - обращение по айди к тегу - getElementById("...");
+
+var name = document.getElementById("MyDiv");
+
+в переменную name мы кладем содержимое тега, теперь его нужно считать.
+Создадим отдельную переменную и считаем в неее с помощью встроенной функции
+
+var some = name.innerHTML;
+
+теперь через переменную some можно взаимодействовать с содержимым тега
+например: some = some + " текст" // добавили слово текст к строке, которая лежала в диве
+
+взаимодействуем со содержимым , А НЕ ТЕГОМ! Чтобы изменить тег, нужно обратиться к
+name.innerHTML, например:
+name.innerHTML = "здесь был какой-то контент"; это строкой мы заменили
+содержимое дива на строку: здесь был какой-то контент
+
+МОЖНО ОБРАТИТЬСЯ ПО КЛАССУ:
+пусть в нашем штмл коде есть тег с классом some. Создадим переменную:
+var myClass = document.getElementsByClassName("some")
+
+СКРИПТЫ НУЖНО РАЗМЕЩАТЬ В КОНЦЕ HTML КОДА!!!
+или использовать функцию onload:
+весь скрипт помещаем в функцию:
+fuction init(){
+   //...
+}
+windoe.onload = init;
+
+setAttribute - встроенный метод для добавления нового или
+изменения существующего элемента. Добавляем атрибут.
+МЕтод принимает два значения - тип атрибута: class/id/name
+и имя атрибута.
+var myCLass = document.getElementsByClassName("top");
+myCLass.setAttribute("class", "redtext");
+
+
+почитать про функцию onclick
+
+ПОЛУЧИТЬ ИНФОРМАЦИЮ С ПОЛЯ ДЛЯ ВВОДА INPUT:
+var a = document.getElementById('a');
+var b = a.value;
+
+value - встроенный метод
+
+почитать про onkeypress

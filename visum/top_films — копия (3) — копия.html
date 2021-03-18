@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cinema Visum</title>
+
+    <link rel="stylesheet" href="style/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="style/top_films — копия (3).css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="row no-gutters menu">
+                <div class="col-ld-1">
+                    <a href="" class="visum"><span>Visum</span></a>
+                </div>
+                <div class="col-lg-5 col-md-7 col-sm-9 col-9 head_name">
+                    <div><a href="" class="lit_V">V</a> </div>
+                    <h1 class="top1">Рейтинг платформ по количеству фильмов</h1>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-3 col-3">
+                    <nav class="d-flex justify-content-around head">
+                        <div class="list1">
+                            <ul>
+                                <li><a href="" class="bottom">Главная</a></li>
+                                <li id="dropdown"><span class="bottom" id="reiting">Готовые рейтинги</span>
+                                    <div class="dropdown-content">
+                                        <ul class="reiting">
+                                            <li>
+                                                <a href="">Топ по количеству сериалов</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Топ по рейтингу фильмов</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="" class="bottom" id="criteria">Подобрать по критериям</a></li>
+                                <li><a href="" class="bottom" id="findfilm">Поиск по фильму</a></li>
+                            </ul>
+                        </div>
+                        <div class="site_navigate_drop">
+                            <div class="drop-label">Меню</div>
+                            <div class="list2">
+                                <ul class="submenu">
+                                    <li><a href="" class="bottom">Главная</a></li>
+
+                                    <li><a href="" class="bottom" id="criteria">Подобрать по критериям</a></li>
+                                    <li><a href="" class="bottom" id="findfilm">Поиск по фильму</a></li>
+                                    <li id="dropdown"><span href="" class="bottom" id="reiting">Готовые рейтинги</span>
+                                        <div class="dropdown-content">
+                                            <ul class="submenu">
+                                                <li>
+                                                    <a href="">Топ по количеству сериалов</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Топ по рейтингу фильмов</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="container">
+            <div class="col-md-2 col-sm-2 sort_block">
+                <aside class="sidebar">
+                    <div class="sort_by_prise">
+                        <div class="sort_name">
+                            Сортировать по цене за подписку
+                        </div>
+                        <ul class="sort">
+                            <li>
+                                <span class="type_of_period">-за месяц</span>
+                                <form action="" class="input_prise_of_period pole" id="form1Test" onclick='SortPlatformsByMon()'>
+                                    <input type="number" class="from" id="getBeginPriceForMonth" name="month_prise" min="0" max="100" placeholder="от" onchange='eventFormMonBegin(this.value)'>
+                                    <input type="number" class="to" id="getEndPriceForMonth" name="month_prise" min="0" max="100" placeholder="до" onchange='eventFormMonEnd(this.value)'>
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за 3 месяцa</span>
+                                <form action="" class="input_prise_of_period pole" onclick='SortPlatformsByThreeMon()'>
+                                    <input type="number" class="from" id="getBeginPriceForThreeMonth" name="month_prise" min="0" max="100" placeholder="от" onchange='eventFormThreeMonBegin(this.value)'>
+                                    <input type="number" class="to" id="getEndPriceForThreeMonth" name="month_prise" min="0" max="200" placeholder="до" onchange='eventFormThreeMonEnd(this.value)'>
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за пол года</span>
+                                <form action="" class="input_prise_of_period  pole" onclick='SortPlatformsByHalfYear()'>
+                                    <input type="number" class="from" id="getBeginPriceForHalfYear" name="6month_prise" min="0" max="100" placeholder="от" onchange='eventFormHalfYearBegin(this.value)'>
+                                    <input type="number" class="to" id="getEndPriceForHalfYear" name="6month_prise" min="0" max="300" placeholder="до" onchange='eventFormHalfYearEnd(this.value)'>
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">-за год</span>
+                                <form action="" class="input_prise_of_period pole" onclick='SortPlatformsByYear()'>
+                                    <input type="number" class="from" id="getBeginPriceForYear" name="year" min="0" max="100" placeholder="от">
+                                    <input type="number" class="to" id="getEndPriceForYear" name="year" min="0" max="400" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period">пробный период</span>
+                                <form action="" class="input_counts_of_free_days pole">
+                                    <input type="number" class="film_count" id="getBeginCountOfFreeDays" name="6month_prise" min="0" max="40" placeholder="кол-во дней" onchange='eventFormFreeDayBegin(this.value)'>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sort_by_count">
+                        <div class="sort_name" id="sort_films">
+                            Сортировать по количеству фильмов
+                        </div>
+                        <form action="" class="input_count_of_films">
+                            <p><input type="radio" id="incr" name="count_of_films" value="increase">
+                                <label for="incr">По возрастанию</label></p>
+                            <p><input type="radio" id="decr" name="count_of_films" value="decrease">
+                                <label for="decr">По убыванию</label></p>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+
+
+            <div class=" col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10  platforms_block">
+                <div class="row_with_button d-flex">
+                    <form>
+                        <input type="search" name="find_platfom_by_name" placeholder="Название платформы">
+                    </form>
+                    <span class="button_filtre" onclick="openNav()">Фильтры</span>
+                </div>
+                <div class="row no-gutters sidebar_type2" id="sidebar_type2">
+                    <div class="row no-gutters d-flex prise_sort_type2">
+                        <div class="sort_name_type2" id="first_sort_by_prise">
+                            Сортировать по цене за подписку
+                        </div>
+                        <ul class="sort_type2">
+                            <li>
+                                <span class="type_of_period_type2">-за месяц</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li style="margin-left: 8%;">
+                                <span class="type_of_period_type2">-за 3 месяцa</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li>
+                                <span class="type_of_period_type2">-за пол года</span>
+                                <form action="" class="input_prise_of_period_type2  pole_type2">
+                                    <input type="number" class="from_type2" name="6month_prise" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="6month_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li style="margin-left: 8%;">
+                                <span class="type_of_period_type2">-за год</span>
+                                <form action="" class="input_prise_of_period_type2 pole_type2">
+                                    <input type="number" class="from_type2" name="year" min="0" max="100" placeholder="от">
+
+                                    <input type="number" class="to_type2" name="year_prise" min="0" max="100" placeholder="до">
+                                </form>
+                            </li>
+                            <li id="free_day">
+                                <span class="type_of_period_type2 pole_input_of_free_days">пробный период</span>
+                                <form action="" class="input_counts_of_free_days_type2 pole_type2">
+                                    <input type="number" class="from_type2 film_count_type2" name="6month_prise" min="0" max="40" placeholder="кол-во дней">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="sort_by_count_type2">
+                        <div class="sort_name_type2">
+                            Сортировать по количеству фильмов
+                        </div>
+                        <form action="" class="input_count_of_films_type2">
+                            <p><input type="radio" id="incr_type2" name="count_of_films" value="increase">
+                                <label for="incr">По возрастанию</label></p>
+                            <p><input type="radio" id="decr_type2" name="count_of_films" value="decrease">
+                                <label for="decr">По убыванию</label></p>
+                        </form>
+                    </div>
+
+                    <img src="images/black_icons/icons8-отменить-50.png" alt="hide_sidebar" class="hide_sidebar" onclick="hideSidebar()">
+
+                </div>
+                <div id="mainBlock">
+                    <div class="back_for_platform" data-film-count="3000" data-mon-price="15.29" data-three-mon-price="20.49" data-halfyear-price="85.50" data-year-price="171" data-free-day="7" id="plata0">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_1">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>15.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>20.49</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 85.50 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 171.00 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice1()">
+                                </div>
+                                <a href="" class="headband"> <img src="images/am.jpg" alt="amediatv" class="logotip"> </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>3000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice1()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="3429" data-mon-price="25.12" data-three-mon-price="45.29" data-halfyear-price="150.72" data-year-price="301.43" data-free-day="30" id="plata1">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_2">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>25.12</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>45.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td>150.72</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 301.43 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>30 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice2()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/netfl.png" alt="netflix" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>3429 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice2()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="3900" data-mon-price="5.90" data-three-mon-price="17.29" data-halfyear-price="35.40" data-year-price="70.80" data-free-day="14" id="plata2">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_3">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>5.90</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>17.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 35.40 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 70.80 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>14 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice3()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/meg.jpg" alt="megotv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>3900 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice3()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform four_plat_view" data-film-count="2000" data-mon-price="5.29" data-three-mon-price="15.29" data-halfyear-price="31.74" data-year-price="63.48" data-free-day="7" id="plata3">
+                        <div class="col-md-3 col-sm-5 col-5  one_platform four_plat_view">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_4">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>5.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>15.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 31.74 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 63.48 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice4()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/strart1.png" alt="starttv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>2000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice4()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="10000" data-mon-price="38.29" data-three-mon-price="45.29" data-halfyear-price="233.52" data-year-price="467.04" data-free-day="0" id="plata4">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_6">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>38.92</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>75.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 233.52 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 467.04 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>0 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice6()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/hbo.jpg" alt="hbo" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>10000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice6()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="4500" data-mon-price="12.59" data-three-mon-price="20.29" data-halfyear-price="24.05" data-year-price="45.70" data-free-day="7" id="plata5">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_7">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>12.59</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>15.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 24.05 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 45.70 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice7()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/more.jpg" alt="moretv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>4500 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice7()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="30000" data-mon-price="6.89" data-three-mon-price="15.29" data-halfyear-price="30.99" data-year-price="51.99" data-free-day="14" id="plata6">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_8">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>6.89</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>15.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 30.99 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td>51.99</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>14 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice8()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/ivi1.jpg" alt="ivitv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>30000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice8()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="9100" data-mon-price="6.81" data-three-mon-price="12.29" data-halfyear-price="40.86" data-year-price="81.72" data-free-day="7" id="plata7">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_9">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>6.81</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>12.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 40.86 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 81.72 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice9()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/apple1.jpg" alt="appletv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>9100 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice9()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="8000" data-mon-price="9.81" data-three-mon-price="18.29" data-halfyear-price="35.86" data-year-price="70.02" data-free-day="14" id="plata8">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_10">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>9.81</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>18.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 35.86 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 70.02 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>14 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice10()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/okko1.jpg" alt="okkotv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>8000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice10()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform four_plat_view" data-film-count="2500" data-mon-price="8.52" data-mon-price="17.29" data-halfyear-price="51.12" data-year-price="102.24" data-free-day="14" id="plata9">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform four_plat_view">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_11">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>8.52</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>17.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 51.12 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 102.24 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>14 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice11()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/tvzavr1.png" alt="tvzavrtv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>2500 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice11()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="5200" data-mon-price="5.81" data-three-mon-price="11.29" data-halfyear-price="40.86" data-year-price="81.72" data-free-day="30" id="plata10">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_13">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>5.81</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>11.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 40.86 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 81.72 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>1 месяц</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice13()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/premiertv.png" alt="tnttv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>5200 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice13()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="22000" data-mon-price="5.49" data-three-mon-price="13.29" data-halfyear-price="32.94" data-year-price="65.88" data-free-day="30" id="plata11">
+                        <div class="col-md-3 col-sm-5 col-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_14">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>5.49</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>13.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 32.94 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td> 65.88 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>1 месяц</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice14()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/jandex1.png" alt="jandextv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>22000 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice14()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="7651" data-mon-price="18.82" data-three-mon-price="36.29" data-halfyear-price="112.92" data-year-price="225.84" data-free-day="7" id="plata12">
+                        <div class="col-md-3 col-sm-5 col-5 col-5 one_platform ">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_15">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>18.82</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>36.29</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 112.92 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td>225.84</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice15()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/amzon.png" alt="amazontv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>7561 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice15()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back_for_platform" data-film-count="3824" data-mon-price="7.82" data-three-mon-price="13.59" data-halfyear-price="30.92" data-year-price="56.84" data-free-day="7" id="plata13">
+                        <div class="col-md-3 col-sm-5 col-5 one_platform">
+                            <div class="logoAndPrice">
+                                <div class="dropdown-prise" id="platform_16">
+                                    <table class="priselist">
+                                        <tr>
+                                            <th colspan="2">Цена</th>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За месяц: </td>
+                                            <td>7.82</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За 3 месяцa: </td>
+                                            <td>13.59</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За пол года: </td>
+                                            <td> 30.92 </td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">За год: </td>
+                                            <td>56.84</td>
+                                        </tr>
+                                        <tr class="under_head_of_table">
+                                            <td class="period">Пробные дни:</td>
+                                            <td>7 дней</td>
+                                        </tr>
+                                    </table>
+                                    <img src="images/white_icons/icons8-отмена-32.png" alt="cross" class="cross_priselist" onclick="closePrice16()">
+                                </div>
+                                <a href="" class="headband">
+                                    <img src="images/voka.jpg" alt="vokatv" class="logotip">
+                                </a>
+                            </div>
+                            <div class="main_inf_of_platform">
+                                <h3>3824 фильмов</h3>
+                                <img src="images/black_icons/icons8-меню-50.png" alt="price_menu" class="dots" onclick="openPrice16()">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="container conect_with_us">
+            <img src="images/backfon.png" alt="background-platforms" class="background-platforms">
+            <!--   <img src="images/backForPhone.png" alt="background_platforms_ForPhone" class="backForPhone"> -->
+            <div class="content">
+                <div class="row no-gutters">
+                    <div class="col-md-6 col-12">
+                        <div class="contact">Свяжитесь с нами</div>
+                        <p class="adress">проспект Независимости 164/42 / Минск, Беларусь</p>
+                        <p class="contactInfo">Тел.: <span>(+375) 29 373-03-83</span></p>
+                        <p class="contactInfo">E-mail: <span>ivojnic44@gmail.com</span></p>
+                        <ul>
+                            <li class="facebook">
+                                <a href=""><img src="images/ico-15.png" alt=""></a>
+                            </li>
+                            <li class="twitter">
+                                <a href=""><img src="images/ico-16.png" alt=""></a>
+                            </li>
+                            <li class="google">
+                                <a href=""><img src="images/ico-18.png" alt=""></a>
+                            </li>
+                            <li class="email">
+                                <a href=""><img src="images/ico-19.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <form action="" method="post" class="data_user">
+                            <input type="text" name="name" placeholder="Ваше имя">
+                            <input type="email" name="email" placeholder="Ваш email адрес">
+                            <textarea>Ваши предложения</textarea>
+                            <button>Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer id="bot">
+            <p class="fut">Directed by</p>
+            <p class="fut"><a href="" class="futt">Ivan Voinich</a> <a href="" class="futt">Nikita Seargey</a></p>
+        </footer>
+    </div>
+
+    <script src="scripts/top_films.js"></script>
+    <script src="scripts/jquerry.js"></script>
+</body>
+
+</html>

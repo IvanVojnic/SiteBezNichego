@@ -1,0 +1,170 @@
+section {
+    display: block;
+}
+
+span {
+    display: block;
+}
+
+#hat {
+    background-image: linear-gradient(to bottom right, #070067, #4A3170);
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    min-height: 100px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 40px;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.search {
+    width: 100%;
+    min-height: 800px;
+    background: #000000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+#first {
+    background-image: url(../images/tv6.png);
+    min-height: 629px;
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+.t {
+    width: 100%;
+    min-height: 800px;
+    background-image: url(../images/tfon2.png);
+    background-size: 100% auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 20%;
+    box-sizing: border-box;
+}
+
+.top {
+    border: 8px solid #03006C;
+    float: left;
+    margin-top: 100px;
+    min-height: 110px;
+    max-height: 110px;
+    min-width: 150px;
+    max-width: 150px;
+    margin-right: 100px;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: content-box;
+    font-family: 'JetBrains Mono', monospace;
+    box-shadow: 5px -10px 5px #000000;
+}
+
+.name {
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#three {
+    margin: 30px;
+    box-sizing: border-box;
+}
+
+#four {
+    margin: 20px !important;
+}
+
+#six {
+    margin-top: 20px !important;
+    box-sizing: border-box;
+}
+
+#count_of_films {
+    background-image: linear-gradient(to bottom right, #C00044, #C000FD);
+    margin-left: 400px;
+}
+
+#count_of_films:hover {
+    background-image: linear-gradient(to bottom right, #C00044, #C000FD);
+    margin-left: 400px;
+    transform: scale(1.05, 1.05);
+}
+
+#count_of_serials {
+    background-image: linear-gradient(to bottom right, #70C033, #70C0DC);
+}
+
+#count_of_serials:hover {
+    background-image: linear-gradient(to bottom right, #70C033, #70C0DC);
+    transform: scale(1.05, 1.05);
+}
+
+#price_quality {
+    background-image: linear-gradient(to bottom right, #F834FF, #DC9657);
+}
+
+#price_quality:hover {
+    background-image: linear-gradient(to bottom right, #F834FF, #DC9657);
+    transform: scale(1.05, 1.05);
+}
+
+#count_of_free_days {
+    background-image: linear-gradient(to bottom right, #BE78FF, #78FFAD);
+    margin-left: 400px;
+}
+
+#count_of_free_days:hover {
+    background-image: linear-gradient(to bottom right, #BE78FF, #78FFAD);
+    margin-left: 400px;
+    transform: scale(1.05, 1.05);
+}
+
+#user_opnion {
+    background-image: linear-gradient(to bottom right, #26FF00, #FF9C2A);
+}
+
+#user_opnion:hover {
+    background-image: linear-gradient(to bottom right, #26FF00, #FF9C2A);
+    transform: scale(1.05, 1.05);
+}
+
+#count_of_novelty {
+    background-image: linear-gradient(to bottom right, #FF9FD9, #9FD9FF);
+}
+
+#count_of_novelty:hover {
+    background-image: linear-gradient(to bottom right, #FF9FD9, #9FD9FF);
+    transform: scale(1.05, 1.05);
+}
+
+#ref {
+    text-decoration: none;
+}
+
+#heading {
+    margin-left: 405px;
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+footer {
+    background: #000000;
+}
+
+.fut {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1em;
+}
+
+.futt {
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1em;
+    text-decoration: none;
+}

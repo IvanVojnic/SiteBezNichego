@@ -1,0 +1,100 @@
+768-992
+section.footer div.contact {
+	    color: #fff;
+	    font-size: 48px;
+	    font-weight: bold;
+	    margin-top: 35px;
+	    text-align: center;
+	}
+	section.footer p {
+	    color: #878787;
+	    font-size: 24px;
+	    margin: 14px auto;
+	    text-align: center;
+	}
+	section.footer p.adress {
+	    font-size: 16px;
+	    color: #878787;
+	    margin-top: 20px;
+	    text-align: center;
+	}
+	section.footer ul {
+	    list-style-type: none;
+	    padding: 20px;
+	    margin: 0 0 0 17%;
+	}
+	section.footer ul li {
+	    display: inline-block;
+	    width: 55px;
+	    height: 55px;
+	    border-radius: 27px;
+	}
+	section.footer{
+	    background-position: top center;
+	    background-repeat: no-repeat;
+	    height: 724px;
+	}
+	section.footer input[type="text"]{
+		margin-top: 10px;
+	}
+	section.footer textarea {
+	    width: 635px;
+	    height: 120px;
+	    background: none;
+	    border-radius: 6px;
+	    border: 1px solid #535353;
+	    color: #fff;
+	    font-size: 17px;
+	    display: block;
+	    padding: 30px;
+	    margin: 20px auto;
+	    resize: none;
+	}
+	footer ul li {
+	    display: inline-block;
+	    margin-right: 12px;
+	}
+	footer p, footer ul {
+	    list-style-type: none;
+	    margin-top: 56px;
+	    padding: 0 10px;
+	    color: #fff;
+	    text-align: right;
+	}
+}
+
+
+
+992-1200
+
+
+section.footer{
+		height: auto;
+	}
+	section.footer div.contact{
+		font-size: 36px;
+	}
+	section.footer p.adress{
+		font-size: 14px;
+	}
+	section.footer p{
+		font-size: 24px;
+	}
+	section.footer ul li{
+		margin-right: 10px;
+	}
+	section.footer input[type="text"], section.footer input[type="email"], section.footer textarea{
+		width: 400px;
+	}
+	footer p{
+		text-align: right;
+	}
+
+1200-1410
+
+section.footer input[type="text"], section.footer input[type="email"], section.footer textarea{
+		width: 400px;
+	}
+	footer p{
+		text-align: right;
+	}
